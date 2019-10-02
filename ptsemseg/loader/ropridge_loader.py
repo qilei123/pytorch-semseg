@@ -148,8 +148,7 @@ class ROPRidge_loader(data.Dataset):
         :param lbl:
         """
         img = m.imresize(img, (self.img_size[0], self.img_size[1]))  # uint8 with RGB mode
-        print(self.img_size)
-        print(img.size)
+
         img = img[:, :, ::-1]  # RGB -> BGR
         img = img.astype(np.float64)
         img -= self.mean
@@ -163,7 +162,7 @@ class ROPRidge_loader(data.Dataset):
         classes = np.unique(lbl)
         lbl = lbl.astype(float)
         lbl = m.imresize(lbl, (self.img_size[0], self.img_size[1]), "nearest", mode="F")
-        print(lbl.size)
+
         lbl = lbl.astype(int)
 
         if not np.all(classes == np.unique(lbl)):

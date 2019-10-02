@@ -7,7 +7,7 @@ import random
 from torch.utils import data
 
 import sys
-sys.path.insert(0,"/media/cql/5F96F1E41ED5F355/DEVELOPMENT/pytorch-semseg")
+sys.path.insert(0,"/data0/qilei_chen/Development/pytorch-semseg")
 
 from ptsemseg.utils import recursive_glob
 from ptsemseg.augmentations import Compose, RandomHorizontallyFlip, RandomRotate, Scale

@@ -14,6 +14,7 @@ training:
     val_interval: 500
     print_interval: 25
     optimizer:
+        name: 'sgd'
         lr: 1.0e-4
     l_rate: 1.0e-4
     l_schedule:

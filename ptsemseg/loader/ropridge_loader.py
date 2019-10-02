@@ -211,9 +211,9 @@ if __name__ == "__main__":
     trainloader = data.DataLoader(dst, batch_size=bs, num_workers=0)
     for i, data_samples in enumerate(trainloader):
         imgs, labels = data_samples
-        import pdb
+        #import pdb
 
-        pdb.set_trace()
+        #pdb.set_trace()
         imgs = imgs.numpy()[:, ::-1, :, :]
         imgs = np.transpose(imgs, [0, 2, 3, 1])
         f, axarr = plt.subplots(bs, 2)

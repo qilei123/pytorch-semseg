@@ -204,8 +204,8 @@ if __name__ == "__main__":
 
     #augmentations = Compose([Scale(800), RandomRotate(180), RandomHorizontallyFlip(0.5)])
     augmentations = Compose([Scale(800), RandomHorizontallyFlip(0.5)])
-    local_path = "./"
-    dst = ROPRidge_loader(local_path, is_transform=True, augmentations=augmentations,annotation_folder = "")
+    local_path = "/data0/qilei_chen/old_alien/AI_EYE_IMGS/ROP_DATASET_with_label/9LESIONS"
+    dst = ROPRidge_loader(local_path, is_transform=True, augmentations=augmentations)
     
     bs = 4
     trainloader = data.DataLoader(dst, batch_size=bs, num_workers=0)

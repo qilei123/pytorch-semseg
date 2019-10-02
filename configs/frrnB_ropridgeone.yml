@@ -17,7 +17,7 @@ training:
         name: 'sgd'
         lr: 1.0e-4
     l_rate: 1.0e-4
-    lr_schedule: None
+    lr_schedule:
     momentum: 0.99
     weight_decay: 0.0005
     resume: frrnB_ropridgeone_best_model.pkl

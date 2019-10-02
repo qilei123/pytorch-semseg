@@ -73,7 +73,7 @@ class ROPRidge_loader(data.Dataset):
         self.cocoAnno = COCO(os.path.join(root,annotation_folder,annotation_filename))
         self.imgIds = self.cocoAnno.getImgIds()
         random.shuffle(self.imgIds)
-        
+        '''
         print(self.imgIds)
         print(len(self.cocoAnno.getImgIds()))
         img = self.cocoAnno.loadImgs([3])[0]
@@ -89,7 +89,7 @@ class ROPRidge_loader(data.Dataset):
 
             #else:
             #    print(num_ann)
-           
+        '''
         '''
         self.images_base = os.path.join(self.root, "leftImg8bit", self.split)
         self.annotations_base = os.path.join(self.root, "gtFine", self.split)

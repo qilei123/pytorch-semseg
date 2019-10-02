@@ -163,7 +163,7 @@ class ROPRidge_loader(data.Dataset):
         classes = np.unique(lbl)
         lbl = lbl.astype(float)
         lbl = m.imresize(lbl, (self.img_size[0], self.img_size[1]), "nearest", mode="F")
-        
+        print(lbl.size)
         lbl = lbl.astype(int)
 
         if not np.all(classes == np.unique(lbl)):

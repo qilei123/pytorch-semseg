@@ -148,7 +148,7 @@ class ROPRidge_loader(data.Dataset):
         :param lbl:
         """
         img = m.imresize(img, (self.img_size[0], self.img_size[1]))  # uint8 with RGB mode
-        print(img.siz)
+        print(img.size)
         img = img[:, :, ::-1]  # RGB -> BGR
         img = img.astype(np.float64)
         img -= self.mean

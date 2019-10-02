@@ -95,14 +95,14 @@ class ROPRidge_loader(data.Dataset):
         self.annotations_base = os.path.join(self.root, "gtFine", self.split)
 
         self.files[split] = recursive_glob(rootdir=self.images_base, suffix=".png")
-
+        '''
         self.void_classes = [-1]
         self.valid_classes = [1]
         self.class_names = ["ropridge"]
 
         self.ignore_index = 250
         self.class_map = dict(zip(self.valid_classes, range(1)))
-
+        '''
         if not self.files[split]:
             raise Exception("No files for split=[%s] found in %s" % (split, self.images_base))
 

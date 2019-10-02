@@ -16,6 +16,9 @@ training:
     optimizer:
         name: 'sgd'
         lr: 1.0e-4
+    loss:
+        name: 'cross_entropy'
+        size_average: False
     l_rate: 1.0e-4
     lr_schedule:
     momentum: 0.99

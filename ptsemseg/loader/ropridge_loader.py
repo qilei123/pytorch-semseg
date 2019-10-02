@@ -206,7 +206,7 @@ if __name__ == "__main__":
     augmentations = Compose([Scale(800), RandomHorizontallyFlip(0.5)])
     local_path = "./"
     dst = ROPRidge_loader(local_path, is_transform=True, augmentations=augmentations,annotation_folder = "")
-    '''
+    
     bs = 4
     trainloader = data.DataLoader(dst, batch_size=bs, num_workers=0)
     for i, data_samples in enumerate(trainloader):
@@ -226,4 +226,4 @@ if __name__ == "__main__":
             break
         else:
             plt.close()
-    '''
+    

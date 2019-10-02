@@ -128,9 +128,10 @@ class ROPRidge_loader(data.Dataset):
         anns = self.cocoAnno.loadAnns(annIds)
         
         mask = self.cocoAnno.annToMask(anns[0])
-
+        '''
         for ann in anns[1:]:
             mask += self.cocoAnno.annToMask(ann)
+        '''
         lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
 
         if self.augmentations is not None:

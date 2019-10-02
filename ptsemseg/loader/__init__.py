@@ -25,4 +25,5 @@ def get_loader(name):
         "nyuv2": NYUv2Loader,
         "sunrgbd": SUNRGBDLoader,
         "vistas": mapillaryVistasLoader,
+        "ropridgeone": ROPRidge_loader
     }[name]

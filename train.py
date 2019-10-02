@@ -19,6 +19,8 @@ from ptsemseg.augmentations import get_composed_augmentations
 from ptsemseg.schedulers import get_scheduler
 from ptsemseg.optimizers import get_optimizer
 
+from ptsemseg.augmentations import Compose, RandomHorizontallyFlip, RandomRotate, Scale
+
 from tensorboardX import SummaryWriter
 
 
@@ -35,8 +37,8 @@ def train(cfg, writer, logger):
 
     # Setup Augmentations
     augmentations = cfg["training"].get("augmentations", None)
-    data_aug = get_composed_augmentations(augmentations)
-
+    #data_aug = get_composed_augmentations(augmentations)
+    data_aug = Compose([Scale(800), RandomHorizontallyFlip(0.5)])
     # Setup Dataloader
     data_loader = get_loader(cfg["data"]["dataset"])
     data_path = cfg["data"]["path"]

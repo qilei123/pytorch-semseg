@@ -201,7 +201,8 @@ class ROPRidge_loader(data.Dataset):
             mask[mask == _voidc] = self.ignore_index
 
         for _validc in self.valid_classes:
-            mask[mask == _validc] = 1#self.class_map[_validc]
+            print(self.class_map[_validc])
+            mask[mask == _validc] = self.class_map[_validc]
         #print(np.unique(mask))
         return mask
 

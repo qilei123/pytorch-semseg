@@ -96,7 +96,7 @@ class ROPRidge_loader(data.Dataset):
 
         self.files[split] = recursive_glob(rootdir=self.images_base, suffix=".png")
         '''
-        self.void_classes = [-1]
+        self.void_classes = [0]
         self.valid_classes = [1]
         self.class_names = ["unlabelled","ropridge"]
 

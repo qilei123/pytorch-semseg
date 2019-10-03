@@ -129,11 +129,11 @@ def train(cfg, writer, logger):
             outputs = model(images)
             #print()
             loss = loss_fn(input=outputs, target=labels)
-            print(images.size())
-            print(outputs.size())
             
             print(torch.max(outputs))
             print(torch.min(outputs))
+            print(torch.max(labels))
+            print(torch.min(labels))
             loss.backward()
             optimizer.step()
 

@@ -177,7 +177,7 @@ class ROPRidge_loader(data.Dataset):
             raise ValueError("Segmentation map contained invalid class values")
         '''
         img = torch.from_numpy(img).float()
-        lbl = torch.from_numpy(lbl).float()
+        lbl = torch.from_numpy(lbl).long()
 
         return img, lbl
 

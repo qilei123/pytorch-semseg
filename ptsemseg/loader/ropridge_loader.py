@@ -203,7 +203,7 @@ class ROPRidge_loader(data.Dataset):
         for _validc in self.valid_classes:
             print(self.class_map[_validc])
             mask[mask == _validc] = self.class_map[_validc]
-        #print(np.unique(mask))
+        print(np.unique(mask))
         return mask
 
 

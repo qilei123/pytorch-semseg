@@ -96,12 +96,12 @@ class ROPRidge_loader(data.Dataset):
 
         self.files[split] = recursive_glob(rootdir=self.images_base, suffix=".png")
         '''
-        self.void_classes = [-1]
+        self.void_classes = [-1,2,3,4,5]
         self.valid_classes = [1]
         self.class_names = ["ropridge"]
 
         self.ignore_index = 250
-        self.class_map = dict(zip(self.valid_classes, range(1)))
+        self.class_map = dict(zip(self.valid_classes, range(1,2)))
         '''
         if not self.files[split]:
             raise Exception("No files for split=[%s] found in %s" % (split, self.images_base))
@@ -128,10 +128,10 @@ class ROPRidge_loader(data.Dataset):
         anns = self.cocoAnno.loadAnns(annIds)
         
         mask = self.cocoAnno.annToMask(anns[0])
-        '''
+        
         for ann in anns[1:]:
             mask += self.cocoAnno.annToMask(ann)
-        '''
+        
         lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
 
         if self.augmentations is not None:

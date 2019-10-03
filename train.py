@@ -131,9 +131,9 @@ def train(cfg, writer, logger):
             loss = loss_fn(input=outputs, target=labels)
             print(images.size())
             print(outputs.size())
-            outp = outputs.cpu().detach().numpy()
             
             print(torch.max(outputs))
+            print(torch.min(outputs))
             loss.backward()
             optimizer.step()
 

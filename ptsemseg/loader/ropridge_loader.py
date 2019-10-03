@@ -100,8 +100,8 @@ class ROPRidge_loader(data.Dataset):
         self.valid_classes = [1]
         self.class_names = ["unlabelled","ropridge"]
 
-        self.ignore_index = 0
-        self.class_map = dict(zip(self.valid_classes, range(2,3)))
+        self.ignore_index = 250
+        self.class_map = dict(zip(self.valid_classes, range(1)))
         '''
         if not self.files[split]:
             raise Exception("No files for split=[%s] found in %s" % (split, self.images_base))
@@ -166,7 +166,7 @@ class ROPRidge_loader(data.Dataset):
         lbl = m.imresize(lbl, (self.img_size[0], self.img_size[1]), "nearest", mode="F")
 
         lbl = lbl.astype(int)
-        '''
+
         if not np.all(classes == np.unique(lbl)):
             print("WARN: resizing labels yielded fewer classes")
 
@@ -174,7 +174,7 @@ class ROPRidge_loader(data.Dataset):
             print(np.all(np.unique(lbl[lbl != self.ignore_index]))<self.n_classes)
             print("after det", classes, np.unique(lbl))
             raise ValueError("Segmentation map contained invalid class values")
-        '''
+
         img = torch.from_numpy(img).float()
         lbl = torch.from_numpy(lbl).long()
 
@@ -201,9 +201,8 @@ class ROPRidge_loader(data.Dataset):
             mask[mask == _voidc] = self.ignore_index
 
         for _validc in self.valid_classes:
-            print(self.class_map[_validc])
             mask[mask == _validc] = self.class_map[_validc]
-        print(np.unique(mask))
+        #print(np.unique(mask))
         return mask
 
 

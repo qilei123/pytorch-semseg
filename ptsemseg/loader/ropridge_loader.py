@@ -199,8 +199,10 @@ class ROPRidge_loader(data.Dataset):
         # Put all void classes to zero
         for _voidc in self.void_classes:
             mask[mask == _voidc] = self.ignore_index
+
         for _validc in self.valid_classes:
             mask[mask == _validc] = self.class_map[_validc]
+        print(mask)
         return mask
 
 

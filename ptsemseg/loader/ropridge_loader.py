@@ -133,7 +133,8 @@ class ROPRidge_loader(data.Dataset):
             mask += self.cocoAnno.annToMask(ann)
             mask[mask >=1]=1
         
-        lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
+        #lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
+        lbl = np.array(mask, dtype=np.uint8)
 
         if self.augmentations is not None:
             img, lbl = self.augmentations(img, lbl)
@@ -166,7 +167,7 @@ class ROPRidge_loader(data.Dataset):
         lbl = m.imresize(lbl, (self.img_size[0], self.img_size[1]), "nearest", mode="F")
 
         lbl = lbl.astype(int)
-
+        '''
         if not np.all(classes == np.unique(lbl)):
             print("WARN: resizing labels yielded fewer classes")
 
@@ -174,9 +175,9 @@ class ROPRidge_loader(data.Dataset):
             print(np.all(np.unique(lbl[lbl != self.ignore_index]))<self.n_classes)
             print("after det", classes, np.unique(lbl))
             raise ValueError("Segmentation map contained invalid class values")
-
+        '''
         img = torch.from_numpy(img).float()
-        lbl = torch.from_numpy(lbl).long()
+        lbl = torch.from_numpy(lbl).float()
 
         return img, lbl
 

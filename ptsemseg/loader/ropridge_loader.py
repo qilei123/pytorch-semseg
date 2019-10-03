@@ -100,7 +100,7 @@ class ROPRidge_loader(data.Dataset):
         self.valid_classes = [1]
         self.class_names = ["unlabelled","ropridge"]
 
-        self.ignore_index = 250
+        self.ignore_index = 0
         self.class_map = dict(zip(self.valid_classes, range(1)))
         '''
         if not self.files[split]:
@@ -201,7 +201,7 @@ class ROPRidge_loader(data.Dataset):
             mask[mask == _voidc] = self.ignore_index
 
         for _validc in self.valid_classes:
-            mask[mask == _validc] = self.class_map[_validc]
+            mask[mask == _validc] = 1
         #print(np.unique(mask))
         return mask
 

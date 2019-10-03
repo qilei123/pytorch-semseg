@@ -170,7 +170,7 @@ class ROPRidge_loader(data.Dataset):
             print("WARN: resizing labels yielded fewer classes")
 
         if not np.all(np.unique(lbl[lbl != self.ignore_index]) < self.n_classes):
-            print(np.unique(lbl[lbl != self.ignore_index])
+            print(np.unique(lbl[lbl != self.ignore_index]))
             print("after det", classes, np.unique(lbl))
             raise ValueError("Segmentation map contained invalid class values")
 

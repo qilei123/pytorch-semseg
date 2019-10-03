@@ -4,7 +4,7 @@ data:
     dataset: ropridgeone
     train_split: train
     val_split: val
-    img_rows: 1024
+    img_rows: 512
     img_cols: 1024
     path: /data0/qilei_chen/old_alien/AI_EYE_IMGS/ROP_DATASET_with_label/9LESIONS
 training:

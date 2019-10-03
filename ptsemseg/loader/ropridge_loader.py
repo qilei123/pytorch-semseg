@@ -131,7 +131,7 @@ class ROPRidge_loader(data.Dataset):
         
         for ann in anns[1:]:
             mask += self.cocoAnno.annToMask(ann)
-            mask[mask >1]=1
+            mask[mask >=1]=1
         
         lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
 
@@ -202,7 +202,7 @@ class ROPRidge_loader(data.Dataset):
 
         for _validc in self.valid_classes:
             mask[mask == _validc] = self.class_map[_validc]
-        print(mask)
+        print(mask==0)
         return mask
 
 

@@ -130,10 +130,10 @@ def train(cfg, writer, logger):
             #print()
             loss = loss_fn(input=outputs, target=labels)
             
-            print(torch.max(outputs))
-            print(torch.min(outputs))
-            print(torch.max(labels))
-            print(torch.min(labels))
+            #print(torch.max(outputs))
+            #print(torch.min(outputs))
+            #print(torch.max(labels))
+            #print(torch.min(labels))
             loss.backward()
             optimizer.step()
 

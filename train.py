@@ -131,7 +131,7 @@ def train(cfg, writer, logger):
             loss = loss_fn(input=outputs, target=labels)
             print(images.size())
             print(outputs.size())
-            outp = outputs.detach().numpy()
+            outp = outputs.cpu().numpy()
             print(outp.size())
             print(labels.size())
             loss.backward()

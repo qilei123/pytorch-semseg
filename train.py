@@ -22,7 +22,7 @@ from ptsemseg.optimizers import get_optimizer
 from ptsemseg.augmentations import Compose, RandomHorizontallyFlip, RandomRotate, Scale
 
 from tensorboardX import SummaryWriter
-
+os.environ['CUDA_LAUNCH_BLOCKING'] = "1"
 
 def train(cfg, writer, logger):
 

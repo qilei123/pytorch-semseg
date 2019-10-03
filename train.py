@@ -129,6 +129,7 @@ def train(cfg, writer, logger):
             outputs = model(images)
             #print()
             loss = loss_fn(input=outputs, target=labels)
+            print(images.size())
             print(outputs.size())
             print(labels.size())
             loss.backward()

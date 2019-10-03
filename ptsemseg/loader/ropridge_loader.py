@@ -101,7 +101,7 @@ class ROPRidge_loader(data.Dataset):
         self.class_names = ["unlabelled","ropridge"]
 
         self.ignore_index = 0
-        self.class_map = dict(zip(self.valid_classes, range(1,2)))
+        self.class_map = dict(zip(self.valid_classes, range(2,3)))
         '''
         if not self.files[split]:
             raise Exception("No files for split=[%s] found in %s" % (split, self.images_base))

@@ -132,7 +132,7 @@ class ROPRidge_loader(data.Dataset):
         for ann in anns[1:]:
             mask += self.cocoAnno.annToMask(ann)
             mask[mask >=1]=1
-
+        mask[mask ==1]=2
         print(mask.dtype)
         print(np.unique(mask))
 

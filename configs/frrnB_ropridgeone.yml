@@ -15,11 +15,11 @@ training:
     print_interval: 25
     optimizer:
         name: 'sgd'
-        lr: 1.0e-4
+        lr: 0.000025
     loss:
         name: 'cross_entropy'
         size_average: False
-    l_rate: 1.0e-4
+    l_rate: 0.000025
     lr_schedule:
     momentum: 0.99
     weight_decay: 0.0005

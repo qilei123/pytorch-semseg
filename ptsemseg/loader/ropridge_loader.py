@@ -134,7 +134,7 @@ class ROPRidge_loader(data.Dataset):
             mask[mask >=1]=1
 
         print(mask.dtype)
-        np.unique(mask)
+        print(np.unique(mask))
         lbl = self.encode_segmap(np.array(mask, dtype=np.long))
 
         if self.augmentations is not None:

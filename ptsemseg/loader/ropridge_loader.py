@@ -133,7 +133,7 @@ class ROPRidge_loader(data.Dataset):
             mask += self.cocoAnno.annToMask(ann)
             mask[mask >=1]=1
         
-        lbl = self.encode_segmap(np.array(mask, dtype=np.uint8))
+        lbl = self.encode_segmap(np.array(mask))
 
         if self.augmentations is not None:
             img, lbl = self.augmentations(img, lbl)

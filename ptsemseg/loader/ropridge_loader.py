@@ -132,6 +132,8 @@ class ROPRidge_loader(data.Dataset):
         for ann in anns[1:]:
             mask += self.cocoAnno.annToMask(ann)
             mask[mask >=1]=1
+
+        print(mask.dtype)
         
         lbl = self.encode_segmap(np.array(mask, dtype=np.float))
 

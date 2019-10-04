@@ -135,7 +135,7 @@ class ROPRidge_loader(data.Dataset):
 
         print(mask.dtype)
         
-        lbl = self.encode_segmap(np.array(mask, dtype=np.float))
+        lbl = self.encode_segmap(np.array(mask, dtype=np.long))
 
         if self.augmentations is not None:
             img, lbl = self.augmentations(img, lbl)
